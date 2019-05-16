@@ -33,20 +33,14 @@ class LegislationController extends Controller
 
     public function postLegislation(Request $request){
         if (Session::get('username')) {
-           if ($request->hasFile('img')) {
-            $ext = $request->img->getClientOriginalExtension();
-            $randFileName = rand(100,100000);
-            $imageName = $randFileName.'.'.$ext;
-            $imagePath = public_path('upload/legislation/');
-            $uploaded = $request->img->move( $imagePath ,$imageName);
-            }
             $this->validate($request,[
                 'filename' => 'required',
+                'body' => 'required',
             ]);
 
             $data = array();
             $data['filename'] = $request->filename;
-            $data['img'] = $imageName;
+            $data['body'] = $request->body;
             $data['created_at'] = now();
             $result = DB::table('legislations')->insert($data);
             if ($result) {
@@ -81,28 +75,18 @@ class LegislationController extends Controller
             if (empty($request->filename)) {
                 $filename= DB::table('legislations')->select('filename')->where('id',$request->id)->get(); 
             }
-
-            if ($request->hasFile('img')) {
-                $ext = $request->img->getClientOriginalExtension();
-                $randFileName = rand(100,100000);
-                $imageName = $randFileName.'.'.$ext;
-                $imagePath = public_path('upload/legislation/');
-                $uploaded = $request->img->move( $imagePath ,$imageName);
-            }else{
-                $image = DB::table('legislations')->select('img')->where('id',$request->id)->get(); 
-                foreach ($image as $key) {
-                    foreach ($key as $value) {
-                        $imageName = $value;
-                    }
-                }
+            if (empty($request->body)) {
+                $body= DB::table('legislations')->select('body')->where('id',$request->id)->get(); 
             }
+
             $this->validate($request,[
                 'filename' => 'required',
+                'body' => 'required',
             ]);
 
             $data = array();
             $data['filename'] = $request->filename;
-            $data['img'] = $imageName;
+            $data['body'] = $request->body;
             $data['updated_at'] = now();
 
 
@@ -120,12 +104,14 @@ class LegislationController extends Controller
     }
 
 
-    public function deleteLegislation(Request $request){
+    public function destroy(Request $request)
+    {        
         if (Session::get('username')) {
-            $result = DB::table('legislations')->where('id',$request->id)->delete();
-            if ($result) {
+            $deleted = DB::table('legislations')->where('id',$request->id)->delete();
+            if ($deleted) {
                 return Redirect::to('/legislations/view')->with('success','Legislation is sucessfully deleted!');
             }
+            return Redirect::to('/legislations/view')->with('error','Legislation cannot be sucessfully deleted!');
         }
         else {
             return back()->with('error','To access Dashboard,Please Login First.');

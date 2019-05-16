@@ -12,8 +12,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="file">File</label>
-				<input class="form-control" type="file" id="file" name="img">
+				<label for="description">Body</label>
+				<textarea name="body" id="editor" placeholder="Write your News description"></textarea>
 			</div>
 
 			<button type="submit" class="btn btn-sm btn-primary hvr-sweep-to-right">Save</button>

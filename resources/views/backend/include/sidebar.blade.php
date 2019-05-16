@@ -28,7 +28,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="{{URL::to('/news/view')}}">
+        <a class="nav-link" href="{{URL::to('/news')}}">
           <i class="fas fa-newspaper"></i>
           <span>News</span>
         </a>
@@ -40,6 +40,12 @@
           <i class="fas fa-balance-scale"></i>
           <span>Legislation</span>
         </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{URL::to('/notice/view')}}">
+          <i class="fas fa-cogs"></i>
+          <span>Notice</span></a>
       </li>
 
       <!-- Divider -->

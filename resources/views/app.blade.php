@@ -4,7 +4,9 @@
         @include('include/header')
         @yield('styles')
     </head>
+
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
+
         <div id="container">
             @include('include/navbar')
 

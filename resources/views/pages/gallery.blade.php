@@ -1,20 +1,26 @@
 @extends('app')
 @section('contents')
-
 <div id="body" class="container-fluid">
-      <div class="container">
-          <h2>Gallery</h2>
-        <div class="gallery-container">
-          @foreach($gallery_data as $result)
-          <a href="#">
-            <div style="background-image: url(upload/gallery/<?=$result->img?>);"></div>
-            <h3>{{$result->filename}}</h3>
-            <p class="text-center">{{$result->filedesc}}</p>
-          </a>
-          @endforeach
+  <div class="container">
+    <div class="about-us">
+      <h2>Gallery</h2>
+      <div class="gallery-container">
+        @foreach($data as $result)
+        <!-- The four columns -->
+        <div class="row">
+          <div class="column">
+            <img  class="img img-responsive" src="/upload/gallery/{{$result->img}}" style="background-image: url('/upload/gallery/<?=$result->img?>'');" onclick="galleryFunction(this);">
+          </div>
         </div>
-        {{ $gallery_data->links() }}
-
+        @endforeach
+        <div class="container gallery-container">
+            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+            <img id="expandedImg" style="width:100%">
+            <div id="imgtext"></div>
+        </div>
       </div>
+    </div>
+  </div>
 </div>
+
 @endsection

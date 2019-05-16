@@ -14,7 +14,7 @@
 
 			<div class="form-group">
 				<label for="description">Body</label>
-				 <textarea name="body" id="editor" placeholder="Write your News description"></textarea>
+				<textarea name="body" id="editor" placeholder="Write your News description"></textarea>
 			</div>
 			
 

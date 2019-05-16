@@ -13,11 +13,6 @@ class NewsController extends Controller
         if (Session::get('username')) {
             $result = DB::table('news')
                     ->paginate(5);
-            if ($result) {
-                # code...
-            } else {
-
-            }
             return view('backend/news/view')->with('data',$result);
         }
         else {
@@ -132,12 +127,15 @@ class NewsController extends Controller
     }
 
 
-    public function deleteNews(Request $request){
+
+    public function destroy(Request $request)
+    {        
         if (Session::get('username')) {
-            $result = DB::table('news')->where('id',$request->id)->delete();
-            if ($result) {
+            $deleted = DB::table('news')->where('id',$request->id)->delete();
+            if ($deleted) {
                 return Redirect::to('/news/view')->with('success','News is sucessfully deleted!');
             }
+            return Redirect::to('/news/view')->with('error','News cannot be sucessfully deleted!');
         }
         else {
             return back()->with('error','To access Dashboard,Please Login First.');

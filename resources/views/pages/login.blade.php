@@ -1,6 +1,6 @@
 @extends('app')
 @section('contents')
-<div id="body">
+<div style="margin-top: 20px;" id="body">
   <div class="container login ">
       <div class="" role="tabpanel" data-example-id="togglable-tabs">
           <div id="myTabContent" class="tab-content">
@@ -11,7 +11,7 @@
                           <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6 col-xs-12">
                               <div class="container email-login">
                                   <h3><span class="text-black">Login</span></h3>
-                                  <form method="post" class="form" action="/postlogin" data-parsley-validate = " ">
+                                  <form method="post" class="form" action="{{ URL::to('/postlogin') }}" data-parsley-validate = " ">
                                       @csrf
                                       <div class="form-group">
                                            <input type="text" id="username" class="form-control" name="username" placeholder="Username" required autofocus required />

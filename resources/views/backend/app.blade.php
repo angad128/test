@@ -27,7 +27,7 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container">
+        <div class="container" id="page-container">
           @include('backend/include/flash-message')
           @yield('contents')
         </div>

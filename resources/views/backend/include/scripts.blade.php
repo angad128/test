@@ -8,23 +8,21 @@
   <!-- Custom scripts for all pages-->
   <script src="{{URL::to('js/sb-admin-2.min.js')}}"></script>
 
-<script type="text/javascript">
-$(function(){
-  $(".open-modal").click(function(){
-     $('#deleteid').val($(this).data('id'));
-    $("#confirmModal").modal("show");
-  });
-});
-</script>
-
-  <script src="{{URL::to('https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js')}}"></script>
+  <script src="{{URL::to('ckeditor/ckeditor.js')}}"></script>
  <script>
-  ClassicEditor
-    .create( document.querySelector( '#editor' ) )
-      .then( editor => {
-        console.log( editor );
-      } )
-      .catch( error => {
-        console.error( error );
+    ClassicEditor
+    .create( document.querySelector( '#editor' ), {
+      // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+    } )
+    .then( editor => {
+      window.editor = editor;
+    } )
+    .catch( err => {
+      
     } );
+</script>
+<script type="text/javascript">
+  function passId(val){
+    $(".modal-footer #deleteNum").val(val);
+  }
 </script>

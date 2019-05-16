@@ -1,9 +1,27 @@
+
+
+
+$('#closePopUpModal').click(function(){
+  $('#popUpMain').css('display','none');
+});
+
 $(document).ready(function() {
-          $("#word_count").on('keyup', function() {
-              var words = this.value.match(/\S+/g).length;
-                  $('#display_count').text(words);
-          });
-      });
+  $("#word_count").on('keyup', function() {
+    var words = this.value.match(/\S+/g).length;
+      $('#display_count').text(words);
+  });
+});
+
+$(document).ready(function() {
+  $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+});
+
+
+$(function(){
+  $(".open-modal").click(function(){
+    $("#deleteModal").modal("show");
+  });
+});
 
 
 $(document).ready(function(){

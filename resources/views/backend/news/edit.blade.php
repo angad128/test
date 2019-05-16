@@ -13,7 +13,7 @@
 
 			<div class="form-group">
 				<label for="description">Body</label>
-				 <textarea name="body" id="editor">{{$data->body}}.</textarea>
+				 <textarea name="body" id="editor" value="{{$data->body}}">{{$data->body}}.</textarea>
 			</div>
 	
 			<div class="form-group">

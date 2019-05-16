@@ -1,6 +1,23 @@
 @extends('app')
 
 @section('contents')
+        <div id="popUpMain" class="container">
+            <div id="popUp">
+              @if(count($notice_data)>0)
+                @foreach($notice_data as $not_data)
+                <h1 id="popUpHeading">{{$not_data->title}} </h1>
+                <div>
+                    <p class="text-white">{!! $not_data->body !!}</p>
+                </div>
+                @endforeach
+              @else
+                <h1 style="color: red; font-size: 30px;">No notice to show!!</h1>
+              @endif
+              <center><button class="btn btn-secondary" id="closePopUpModal" type="button">Close</button></center>
+            </div>
+        </div>
+
+
 <div id="body" class="container-fluid">
   <div id="carouselss">
     <div class="container">
@@ -47,61 +64,33 @@
   <div id="details">
     <div class="container" id="news">
       <div class="row news-panel">
+
         <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-12 news-box">
           <div class="forfaicon"><i class="fa fa-file"></i></div>
           <div class="new-box-content">
             <h3 class="text-underline"><span class="lang" key="news-title">News</span></h3>
             <div class="rpwe-block ">
               <ul class="rpwe-ul">
+              @if(count($news_data)>0)
+                @foreach($news_data as $n_data)
                 <li class="rpwe-li rpwe-clearfix">
                   <a class="rpwe-img" href="" rel="bookmark">
-                    <img class="rpwe-alignleft rpwe-thumb rpwe-default-thumb" src="http://placehold.it/45x45/f0f0f0/ccc" alt="परिषदबाट सञ्चालन हुने तालीममा सहभागिताका लागि सूचिकृत हुन आउने सूचना" width="45" height="45">
+                    <img class="rpwe-alignleft rpwe-thumb rpwe-default-thumb" src="/upload/news/{{$n_data->img}}" width="45" height="45">
                   </a>
                   <h3 class="rpwe-title">
-                  <a href="" title="Permalink to परिषदबाट सञ्चालन हुने तालीममा सहभागिताका लागि सूचिकृत हुन आउने सूचना" rel="bookmark">परिषदबाट सञ्चालन हुने तालीममा सहभागिताका लागि सूचिकृत हुन आउने सूचना</a>
+                  <a href="/news/{{$n_data->id}}" title="Permalink to परिषदबाट सञ्चालन हुने तालीममा सहभागिताका लागि सूचिकृत हुन आउने सूचना" rel="bookmark"><p>{!! str_limit($n_data->body, $limit = 60)  !!}</p></a>
                   </h3>
-                  <time class="rpwe-time published" datetime="2019-03-23T15:34:09+05:45">मार्च 23, 2019</time>
+                  <time class="rpwe-time published" datetime="2019-03-23T15:34:09+05:45">{{$n_data->created_at}}</time>
                 </li>
-                <li class="rpwe-li rpwe-clearfix">
-                  <a class="rpwe-img" href="" rel="bookmark">
-                    <img class="rpwe-alignleft rpwe-thumb rpwe-default-thumb" src="http://placehold.it/45x45/f0f0f0/ccc" alt="परिषदबाट सञ्चालन हुने तालीममा सहभागिताका लागि सूचिकृत हुन आउने सूचना" width="45" height="45">
-                  </a>
-                  <h3 class="rpwe-title">
-                  <a href="" title="Permalink to परिषदबाट सञ्चालन हुने तालीममा सहभागिताका लागि सूचिकृत हुन आउने सूचना" rel="bookmark">परिषदबाट सञ्चालन हुने तालीममा सहभागिताका लागि सूचिकृत हुन आउने सूचना</a>
-                  </h3>
-                  <time class="rpwe-time published" datetime="2019-03-23T15:34:09+05:45">मार्च 23, 2019</time>
-                </li>
-                <li class="rpwe-li rpwe-clearfix">
-                  <a class="rpwe-img" href="" rel="bookmark">
-                    <img class="rpwe-alignleft rpwe-thumb rpwe-default-thumb" src="http://placehold.it/45x45/f0f0f0/ccc" alt="परिषदबाट सञ्चालन हुने तालीममा सहभागिताका लागि सूचिकृत हुन आउने सूचना" width="45" height="45">
-                  </a>
-                  <h3 class="rpwe-title">
-                  <a href="" title="Permalink to परिषदबाट सञ्चालन हुने तालीममा सहभागिताका लागि सूचिकृत हुन आउने सूचना" rel="bookmark">परिषदबाट सञ्चालन हुने तालीममा सहभागिताका लागि सूचिकृत हुन आउने सूचना</a>
-                  </h3>
-                  <time class="rpwe-time published" datetime="2019-03-23T15:34:09+05:45">मार्च 23, 2019</time>
-                </li>
-                <li class="rpwe-li rpwe-clearfix">
-                  <a class="rpwe-img" href="" rel="bookmark">
-                    <img class="rpwe-alignleft rpwe-thumb rpwe-default-thumb" src="http://placehold.it/45x45/f0f0f0/ccc" alt="परिषदबाट सञ्चालन हुने तालीममा सहभागिताका लागि सूचिकृत हुन आउने सूचना" width="45" height="45">
-                  </a>
-                  <h3 class="rpwe-title">
-                  <a href="" title="Permalink to परिषदबाट सञ्चालन हुने तालीममा सहभागिताका लागि सूचिकृत हुन आउने सूचना" rel="bookmark">परिषदबाट सञ्चालन हुने तालीममा सहभागिताका लागि सूचिकृत हुन आउने सूचना</a>
-                  </h3>
-                  <time class="rpwe-time published" datetime="2019-03-23T15:34:09+05:45">मार्च 23, 2019</time>
-                </li>
-                <li class="rpwe-li rpwe-clearfix">
-                  <a class="rpwe-img" href="" rel="bookmark">
-                    <img class="rpwe-alignleft rpwe-thumb rpwe-default-thumb" src="http://placehold.it/45x45/f0f0f0/ccc" alt="परिषदबाट सञ्चालन हुने तालीममा सहभागिताका लागि सूचिकृत हुन आउने सूचना" width="45" height="45">
-                  </a>
-                  <h3 class="rpwe-title">
-                  <a href="" title="Permalink to परिषदबाट सञ्चालन हुने तालीममा सहभागिताका लागि सूचिकृत हुन आउने सूचना" rel="bookmark">परिषदबाट सञ्चालन हुने तालीममा सहभागिताका लागि सूचिकृत हुन आउने सूचना</a>
-                  </h3>
-                  <time class="rpwe-time published" datetime="2019-03-23T15:34:09+05:45">मार्च 23, 2019</time>
-                </li>
+                @endforeach
+              @else
+                <li class="rpwe-li rpwe-clearfix">Sorry, currently no News is published!</li>
+              @endif
               </ul>
             </div>
           </div>
         </div>
+
         <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-12 news-box download-box">
           <div class="forfaicon"><i class="fa fa-book"></i></div>
           <div class="new-box-content">
@@ -112,31 +101,30 @@
                   <tr>
                     <td colspan="6"><i class="fas fa-file-pdf"></i> <strong class="download-description"><p>पाठ्यक्रम तथा परीक्षा सञ्चालन नियमावली, २०५५</p></strong></td> <td>Table cell</td> <td><button class="btn btn-primary hvr-sweep-to-right" type="button"><span class="lang" key="viewBtn">
                     View</span></button></td>
-                </tr>
-                <tr>
-                  <td colspan="6"><i class="fas fa-file-pdf"></i> <strong class="download-description"><p>पाठ्यक्रम तथा परीक्षा सञ्चालन नियमावली, २०५५</p></strong></td> <td>Table cell</td> <td><button class="btn btn-primary hvr-sweep-to-right" type="button">
-                  <span class="lang" key="viewBtn">
-                    View</span></button></td>
-              </tr>
-              <tr>
-                <td colspan="6"><i class="fas fa-file-pdf"></i> <strong class="download-description"><p>पाठ्यक्रम तथा परीक्षा सञ्चालन नियमावली, २०५५</p></strong></td> <td>Table cell</td> <td><button class="btn btn-primary hvr-sweep-to-right" type="button">
-                <span class="lang" key="viewBtn">
-                    View</span></button></td>
-            </tr>
-            <tr>
-              <td colspan="6"><i class="fas fa-file-pdf"></i> <strong class="download-description"><p>पाठ्यक्रम तथा परीक्षा सञ्चालन नियमावली, २०५५</p></strong></td> <td>Table cell</td> <td><button class="btn btn-primary hvr-sweep-to-right" type="button">
-              <span class="lang" key="viewBtn">
-                    View</span></button></td>
-          </tr>
-          
-        </tbody>
-      </table>
+                  </tr>
+                  <tr>
+                    <td colspan="6"><i class="fas fa-file-pdf"></i> <strong class="download-description"><p>पाठ्यक्रम तथा परीक्षा सञ्चालन नियमावली, २०५५</p></strong></td> <td>Table cell</td> <td><button class="btn btn-primary hvr-sweep-to-right" type="button">
+                    <span class="lang" key="viewBtn">
+                      View</span></button></td>
+                   </tr>
+                  <tr>
+                    <td colspan="6"><i class="fas fa-file-pdf"></i> <strong class="download-description"><p>पाठ्यक्रम तथा परीक्षा सञ्चालन नियमावली, २०५५</p></strong></td> <td>Table cell</td> <td><button class="btn btn-primary hvr-sweep-to-right" type="button">
+                    <span class="lang" key="viewBtn">
+                      View</span></button></td>
+                  </tr>
+                  <tr>
+                    <td colspan="6"><i class="fas fa-file-pdf"></i> <strong class="download-description"><p>पाठ्यक्रम तथा परीक्षा सञ्चालन नियमावली, २०५५</p></strong></td> <td>Table cell</td> <td><button class="btn btn-primary hvr-sweep-to-right" type="button">
+                    <span class="lang" key="viewBtn">
+                      View</span></button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-</div>
-</div>
-</div>
   <div id="team">
     <div class="container">
       <h2 class="center-align"><span class="lang" key="team">OUR TEAM</span></h2>

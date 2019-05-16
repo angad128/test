@@ -13,6 +13,7 @@
     </div>
   </div>
   <div class="card-body">
+    @if(count($data)>0)
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
@@ -41,7 +42,7 @@
             <td><img style="width: 80px;height: 80px;" src="/upload/member/<?=$result->img?>"/></td>
             <td>
               <a class="btn btn-success action" href="{{ URL::to('members/'.$result->id.'/edit')}}"><i class="fas fa-pencil-alt"></i>Edit</a>
-              <a class="btn btn-danger action open-modal" id="open-modal" value="{{$result->id}}" data-toggle="modal" data-target="#confirmModal" data-id="{{$result->id}}"><i class="fas fa-trash-alt"></i>Delete</a>
+              <a class="btn btn-danger action open-modal" data-toggle="modal" data-target="#deleteModal" data-id="{{$result->id}}" onclick="passId(<?=$result->id;?>)"><i class="fas fa-trash-alt"></i>Delete</a>
             </td>
           </tr>
           @endforeach
@@ -49,30 +50,29 @@
       </table>
       {{ $data->links() }}
     </div>
+      @else
+      <div class="alert alert-danger alert-block">Sorry, currently no member is added yet!</div>
+      @endif
   </div>
 </div>
 
-<!-- Data Delete Confirmation Modal-->
-<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Do you really want to delete?</h5>
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <div class="modal-body">Select "Delete" below if you are ready to delete selected Legislation.</div>
-      <div class="modal-footer">
-        <a class="btn btn-primary action" data-dismiss="modal">Cancel</a>
-        <form  method="POST" action="{{ URL::to('members/delete')}}">
-          @csrf
-           <input type="hidden" name="id" id="deleteid" value=""/>
-          <button class="btn btn-primary action">Delete</button>  
-        </form>
-      </div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+              Are you sure you want to delete?
+            </div>
+            <div class="modal-footer">
+                <form id="deleteInfoForm" action="/members/delete" method="post">
+                    @csrf
+                    <input type="hidden" id="deleteNum" name="id" value="">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 @endsection

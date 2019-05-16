@@ -36,50 +36,50 @@ class GalleryController extends Controller
     }
 
 
-    public function  uploadOnGallery(Request $request){
+    public function uploadOnGallery(Request $request){
         if (Session::get('username')) {
            if ($request->hasFile('img')) {
-                $ext = $request->img->getClientOriginalExtension();
-                $randFileName = rand(100,100000);
-                $imgName = $randFileName.'.'.$ext;
-                $imagePath = public_path('upload/gallery/');
-                $uploaded = $request->img->move( $imagePath ,$imgName);
-                }
-            
-           
+            $ext = $request->img->getClientOriginalExtension();
+            $randFileName = rand(100,100000);
+            $imageName = $randFileName.'.'.$ext;
+            $imagePath = public_path('upload/gallery/');
+            $uploaded = $request->img->move( $imagePath ,$imageName);
+            }
             $this->validate($request,[
                 'filename' => 'required',
-                'filetitle' => 'required',
                 'filedesc' => 'required',
             ]);
 
             $data = array();
             $data['filename'] = $request->filename;
-            $data['filetitle'] = $request->filetitle;
             $data['filedesc'] = $request->filedesc;
-            $data['img'] = $imgName;
+            $data['img'] = $imageName;
             $data['created_at'] = now();
 
 
             $result = DB::table('gallery')->insert($data);
             if ($result) {
-                return Redirect::to('/gallery/view')->with('success','Successfully Add to gallery!');
+                return Redirect::to('/gallery/view')->with('success',"News Sucessfully Published.");
             }
-            else {               
-                return Redirect::to('/gallery/upload')->with('error','Failed to Add on gallery!');  
+            else {
+                return Redirect::to('/gallery/view')->with('error','Fill all the forms correctly.');  
             }
         }
         else {
-            return Redirect::to('/')->with('exception','To access Dashboard,Please Login First.');
+            return back()->with('error','To access Dashboard,Please Login First.');
         }
     }
 
-    public function deleteGallery(Request $request){
+
+
+    public function destroy(Request $request)
+    {        
         if (Session::get('username')) {
-            $result = DB::table('gallery')->where('id',$request->id)->delete();
-            if ($result) {
-                return Redirect::to('/galery/view')->with('success','Item is sucessfully deleted!');
+            $deleted = DB::table('gallery')->where('id',$request->id)->delete();
+            if ($deleted) {
+                return Redirect::to('/gallery/view')->with('success','Gallery is sucessfully deleted!');
             }
+            return Redirect::to('/gallery/view')->with('error','Gallery cannot be sucessfully deleted!');
         }
         else {
             return back()->with('error','To access Dashboard,Please Login First.');

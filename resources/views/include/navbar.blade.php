@@ -1,3 +1,4 @@
+<div id="container">
 <div id="header">
     <div style="overflow-x: hidden;" class="container">
         <div class="row head">
@@ -29,25 +30,25 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-             <a href="#"><img border="0" src="images/logo.png" width="70px" height="27px"
+             <a href="#"><img border="0" src="{{URL::to('images/logo.png')}}" width="70px" height="27px"
                                       class="img img-responsive brand-img"></a>
         </div>
         
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="{!! url('/'); !!}"><i class="fas fa-home"></i><span class="lang" key="home">Home</span></a></li>
-                <li><a href="/about"><span class="lang" key="about">About</span></a></li>
+                <li><a href="{!! url('/about'); !!}"><span class="lang" key="about">About</span></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="lang" key="committee">Committee</span><span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <center><li><a href="#"><span class="lang" key="pCommittee">Partial committee</span></a></li></center>
-                      <center><li><a href="#"><span  class="lang" key="uCommittee">Under committee</span></a></li></center>
+                      <center><li><a href="{!! url('/comittee/partial'); !!}"><span class="lang" key="pCommittee">Partial committee</span></a></li></center>
+                      <center><li><a href="{!! url('/comittee/under'); !!}"><span  class="lang" key="uCommittee">Under committee</span></a></li></center>
                     </ul>
                 </li>
                 <li><a href="{!! url('/'); !!}#news"><span class="lang" key="news">News</span></a></li>
                 <li><a href="{!! url('/'); !!}#team"><span class="lang" key="boardmember">BoardMember</span></a></li>
-                <li><a href="{!! url('/gallery'); !!}#news"><span class="lang" key="gallery">Gallery</span></a></li>
-                <li><a href="{!! url('/contact'); !!}#news"><span class="lang" key="contact">Contact</span></a></li>
+                <li><a href="{!! url('/gallery'); !!}"><span class="lang" key="gallery">Gallery</span></a></li>
+                <li><a href="{!! url('/contact'); !!}"><span class="lang" key="contact">Contact</span></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <p class="text-white text-underline">Check your Language?</p>
@@ -56,4 +57,5 @@
             </ul>
         </div>
     </nav>
+</div>
 </div>

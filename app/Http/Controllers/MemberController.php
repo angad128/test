@@ -44,6 +44,7 @@ class MemberController extends Controller
             $this->validate($request,[
                 'name' => 'required',
                 'title' => 'required',
+                'imageName' => 'required',
             ]);
 
             $data = array();
@@ -102,6 +103,7 @@ class MemberController extends Controller
             $this->validate($request,[
                 'name' => 'required',
                 'title' => 'required',
+                'imageName' => 'required',
             ]);
 
             $data = array();
@@ -126,16 +128,16 @@ class MemberController extends Controller
 
 
 
-    public function deleteMember(Request $request){
+    public function destroy(Request $request)
+    {        
         if (Session::get('username')) {
-            $result = DB::table('members')->where('id',$request->id)->delete();
-            if ($result) {
-                Session::put('success','Member is sucessfully deleted!');
+            $deleted = DB::table('members')->where('id',$request->id)->delete();
+            if ($deleted) {
                 return Redirect::to('/members/view')->with('success','Member is sucessfully deleted!');
             }
+            return Redirect::to('/members/view')->with('error','Member cannot be sucessfully deleted!');
         }
         else {
-            Session::put('error','To access Dashboard,Please Login First.');
             return back()->with('error','To access Dashboard,Please Login First.');
         }
     }

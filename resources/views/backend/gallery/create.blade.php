@@ -4,16 +4,12 @@
    <form method="post" class="container" action="{{URL::to('/gallery/upload')}}" enctype="multipart/form-data">
     @csrf
 	    <div class="form-group">
-	        <label for="filename">Filename</label>
-	        <input class="form-control" type="text" name="filename" placeholder="File name..">
+	        <label for="filename">Gallery Name</label>
+	        <input class="form-control" type="text" name="filename" placeholder="Gallery name..">
 	    </div>
 	    <div class="form-group">
-	        <label for="filetitle">File Title</label>
-	        <input class="form-control" type="text" name="filetitle" placeholder="File title...">
-	    </div>
-	    <div class="form-group">
-	        <label for="filedesc">File Description</label>
-	        <input class="form-control" type="text" name="filedesc" placeholder="File description...">
+	        <label for="filedesc">Gallery Description</label>
+	        <input class="form-control" type="text" name="filedesc" placeholder="Gallery description...">
 	    </div>
 	    <div class="form-group">
 	        <label for="image">Image</label>

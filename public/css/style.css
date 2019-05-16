@@ -14,6 +14,23 @@ body {
   position: relative;
 }
 
+#popUpMain{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-color:#4e73df; 
+  z-index: 10000;
+}
+#popUp {
+  width: 80%;
+  height: 90%;
+  margin: 5% 10% 5% 10%;
+}
+
+
 
 .affix {
   top:0;
@@ -72,8 +89,9 @@ body {
   margin-top: -40px;
 }
 .brand-img {
-  padding-top: 5px;           
+  padding-top: 5px;
 }
+
 span.icon-bar {
     background: white;
 }
@@ -146,7 +164,7 @@ ul.nav.navbar-nav.navbar-left li a:focus, ul.nav.navbar-nav.navbar-left li a:act
 
 
 #body {  
-  margin-top: 10px;
+  /*margin-top: 10px;*/
   padding-bottom: 120px;
   /* padding-bottom : Height of the footer with margin+paddinglist-container */
   padding-top: 0;
@@ -161,10 +179,6 @@ ul.nav.navbar-nav.navbar-left li a:focus, ul.nav.navbar-nav.navbar-left li a:act
   transform: scale(1.1);
 }
 
-.fa-university {
-  font-size: 60px;
-  color: red;
-}
 .caption h4 {
   font-weight: 600;
 }
@@ -719,18 +733,6 @@ span.icon-bar {
     border-color: grey;
 }
 
-/*.btn-primary {
-    color: black;
-    background: transparent;
-    border-color: grey;
-}*/
-
-/*.btn-primary:hover {
-    color: #fff;
-    background: transparent;
-    border-color: grey;
-}*/
-
 .btn-contact, .btn-primary {
     width: 100%;
     height: 45px;
@@ -1218,4 +1220,71 @@ input.parsley-success {
 
 .main img {
     height: 40px;
+}
+
+
+/* About Us page */
+.about-us {
+  margin:30px auto; 
+  padding:20px;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+
+/* dash board */
+#page-container {
+  margin: 15px auto;
+}
+
+
+/** Galery frontend **/
+
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column .img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column .img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image gallery container */
+.gallery-container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
 }
