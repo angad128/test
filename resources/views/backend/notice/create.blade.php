@@ -3,17 +3,17 @@
 @section('title', 'Notice Create')
 @section('contents')
 
-	<h2>Create Notice</h2>
+	<h2>{{__('key.create_notices')}}</h2>
 		
     <form method="POST" action="{{ URL::to('notice/create/') }}" enctype="multipart/form-data">
 			<div class="form-group">
-				<label for="title">Title</label>
+				<label for="title">{{__('key.title')}}</label>
 				<input class="form-control" type="text" id="title" name="title" placeholder="Notice title">
 			</div>
 
 
 			<div class="form-group">
-				<label for="description">Body</label>
+				<label for="description">{{__('key.descriptions')}}</label>
 				<textarea name="body" id="editor" placeholder="Write your Notice here."></textarea>
 			</div>
 			

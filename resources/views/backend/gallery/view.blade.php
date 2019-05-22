@@ -3,8 +3,8 @@
 @section('contents')
 <div class="about-us">
 	<div class="row">
-		<div class="col col-lg-9 col-md-8 col-sm-7 col-xs-6"><h2>Gallery</h2></div>
-		<div class="col col-lg-3 col-md-4 col-sm-5 col-xs-6 pull-right"><a class="btn btn-sm btn-primary hvr-sweep-to-right btn-gallery" href="/gallery/upload">Add to Gallery</a></div>
+		<div class="col col-lg-9 col-md-8 col-sm-7 col-xs-6"><h2>{{__('key.gallery')}}</h2></div>
+		<div class="col col-lg-3 col-md-4 col-sm-5 col-xs-6 pull-right"><a class="btn btn-sm btn-primary hvr-sweep-to-right btn-gallery" href="/gallery/upload"><i class="fas fa-plus"></i>{{__('key.create_new')}}</a></div>
 	</div>
 	@if(count($data)>0)
 	<div class="scrollmenu">

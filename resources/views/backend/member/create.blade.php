@@ -1,18 +1,18 @@
 @extends('backend/app')
 @section('title', 'Member Create')
 @section('contents')
-	<h2>Add Member</h2>		
+	<h2>{{__('key.create_members')}}</h2>		
     <form method="POST" action="{{ URL::to('/members/create') }}" enctype="multipart/form-data">
     		<div class="row">
     			<div class="col-lg-6 col-md-6 col-sm-6">
     				<div class="form-group">
-						<label for="name">Name</label>
+						<label for="name">{{__('key.name')}}</label>
 						<input class="form-control" type="text" id="name" name="name" placeholder="Name..">
 					</div>
     			</div>
     			<div class="col-lg-6 col-md-6 col-sm-6">
     				<div class="form-group">
-    					<label for="degination">Degination</label>
+    					<label for="degination">{{__('key.degination')}}</label>
 						<select name="title" style="width: 100%;">
 						    <option value="nonselected" selected disabled>----------</option>
 						    <option value="chairman">Chairman</option>
@@ -35,7 +35,7 @@
     		</div>
 
 			<div class="form-group">
-				<label for="file">File</label>
+				<label for="file">{{__('key.image')}}</label>
 				<input class="form-control" type="file" id="file" name="img">
 			</div>
 

@@ -13,7 +13,7 @@
               @else
                 <h1 style="color: red; font-size: 30px;">No notice to show!!</h1>
               @endif
-              <center><button class="btn btn-secondary" id="closePopUpModal" type="button">Close</button></center>
+              <center><button class="btn btn-secondary popUpBtn" id="closePopUpModal" type="button">{{__('key.close')}}</button></center>
             </div>
         </div>
 

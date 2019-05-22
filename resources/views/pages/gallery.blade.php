@@ -14,8 +14,8 @@
 	   	<div class="row"> 
 	        <div class="column-right pull-left">
 	        	 <div class="container gallery-container">
-		            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
 		            <img id="expandedImg" class="img img-responsive">
+		            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
 		            <div id="imgtext"></div>
 		        </div>
 	        </div>

@@ -21,14 +21,17 @@ body {
   width: 100%;
   height: 100%;
   color: #fff;
-  background-color:#4e73df; 
-  background: cover;
+  background-color:#355664; 
+  opacity: 0.9;
   z-index: 10000;
 }
 #popUp {
   width: 80%;
   height: 90%;
   margin: 5% 10% 5% 10%;
+}
+.popUpBtn {
+  color: black;
 }
 
 .affix {
@@ -49,12 +52,12 @@ body {
    padding:0px;
 }
 .navbar .dropdown-menu {
-  background-color:#4e73df;
+  background-color:#00AEEF;
   color: #fff;
   line-height: 30px;
 }
 .navbar, .footer {
-   background-color:#4e73df;
+   background-color:#00AEEF;
    /** #00AEEF; **/
 }
 
@@ -137,8 +140,6 @@ ul.nav.navbar-nav.navbar-right p{
   margin-top: 10px;
   margin-left: 20px;
 }
-
-
 .carousel-caption {
   margin-bottom: 50px; 
 }
@@ -263,9 +264,14 @@ ul.nav.navbar-nav.navbar-right p{
 .text-underline {
   text-decoration: underline;
 }
-
+.top-bar-fontsize {
+  font-size: 25px;
+}
 .text-white {
   color: white;
+}
+.text-blue {
+  color: blue;
 }
 
 
@@ -590,6 +596,9 @@ font-family: Catamaran;
 @media (max-width: 488px) {
   html,body {
     font-size: 14px;
+  }
+  a.btn-news {
+    font-size: 9px !important;
   }
   #footer a h4, .footer-contact-detail p, .contact li {
     font-size: 14px;
@@ -1198,9 +1207,8 @@ input.parsley-success {
 /* About Us page */
 .about-us {
   margin:30px auto; 
-  padding:20px;
-  border: 1px solid black;
-  border-radius: 30px;
+  padding:30px;
+  background-color: #EFF0F2;
 }
 
 /* dash board */
@@ -1285,7 +1293,7 @@ div.scrollmenu img:hover {
 .closebtn {
   position: absolute;
   top: 10px;
-  right: 15px;
+  right: 18pc;
   color:#4e73df;
   font-size: 35px;
   cursor: pointer;
@@ -1295,9 +1303,20 @@ div.scrollmenu img:hover {
   padding-top:12px;
 }
 
+@media(max-width: 1204px){
+  .closebtn {
+    right: 13pc;
+  }
+}
+
 @media(max-width: 1020px){
   .gallery-container img{
     height: 400px;
+  }
+}
+@media(max-width: 992px){
+  .closebtn {
+    right: 6pc;
   }
 }
 @media(max-width: 890px){
@@ -1310,6 +1329,9 @@ div.scrollmenu img:hover {
   .gallery-container img{
     height: 380px;
     border-radius: 70px;
+  }
+  .closebtn {
+    right: 0;
   }
 }
 @media(max-width: 663px){
@@ -1328,9 +1350,6 @@ div.scrollmenu img:hover {
   .gallery-container img{
     height: 320px;
     border-radius: 50px;
-  }
-  .closebtn {
-    right: 10px;
   }
 }
 @media(max-width: 532px){
@@ -1361,9 +1380,6 @@ div.scrollmenu img:hover {
   .gallery-container img{
     height: 280px;
     border-radius: 20px;
-  }
-  .closebtn {
-    right: 5px;
   }
 }
 

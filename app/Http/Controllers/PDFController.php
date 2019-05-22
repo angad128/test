@@ -21,9 +21,5 @@ class PDFController extends Controller
 
         echo file_get_contents($path);
 
-        //    $pdf = App::make('dompdf.wrapper');
-        // $pdf->loadHTML($data);
-        // return $pdf->stream();
-
     }
 }

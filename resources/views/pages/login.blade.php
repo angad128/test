@@ -11,7 +11,7 @@
                           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
                           <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6 col-xs-12">
                               <div class="container email-login">
-                                  <h3><span class="text-black">Login</span></h3>
+                                  <h3><span class="text-black">{{ __('key.login') }}</span></h3>
                                   <form method="post" class="form" action="{{ URL::to('/postlogin') }}" data-parsley-validate = " ">
                                       @csrf
                                       <div class="form-group">
@@ -23,9 +23,9 @@
                                       <div class="row login-button">
                                           <center>
                                               <button style="width: 50%; height: 40px;" type="submit"
-                                                      class="btn btn-primary hvr-sweep-to-right">Login
+                                                      class="btn btn-primary hvr-sweep-to-right">{{ __('key.login') }}
                                               </button>
-                                               <button style="width: 50%; height: 40px;" class="btn btn-lg btn-danger btn-block" type="reset" value="Reset">Clear</button>
+                                               <button style="width: 50%; height: 40px;" class="btn btn-lg btn-danger btn-block" type="reset" value="Reset">{{ __('key.clear') }}</button>
                                           </center>
                                       </div>
                                   </form>
@@ -35,7 +35,6 @@
                           </div>
                       </div>
               </div><!-- Tab Content 1 -->
-
           </div>
       </div>
   </div>

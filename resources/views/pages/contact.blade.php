@@ -80,7 +80,7 @@
 							</div>
 							<div class="col-md-4 col-lg-4 col-sm-6 pull-right">
 								<div class="row login-button">
-									<center><button type="submit" class="btn btn-primary btn-contact btn-large hvr-sweep-to-right">Contact</button></center>
+									<center><button type="submit" class="btn btn-primary btn-contact btn-large hvr-sweep-to-right">{{__('key.contact')}}</button></center>
 								</div>
 							</div>
 						</div>
