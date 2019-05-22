@@ -1,9 +1,8 @@
 @extends('backend/app')
+@section('title', 'Member View')
 @section('contents')
 <!-- Page Heading -->
 <!-- DataTales Example -->
-
-
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <div class="row">

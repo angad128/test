@@ -36,24 +36,24 @@
         
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="{!! url('/'); !!}"><i class="fas fa-home"></i><span class="lang" key="home">Home</span></a></li>
-                <li><a href="{!! url('/about'); !!}"><span class="lang" key="about">About</span></a></li>
+                <li><a href="{!! url('/'); !!}"><i class="fas fa-home"></i><span>{{ __('key.home') }}</span></a></li>
+                <li><a href="{!! url('/about'); !!}"><span>{{ __('key.about') }}</span></a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="lang" key="committee">Committee</span><span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>{{ __('key.committee') }}</span><span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <center><li><a href="{!! url('/comittee/partial'); !!}"><span class="lang" key="pCommittee">Partial committee</span></a></li></center>
-                      <center><li><a href="{!! url('/comittee/under'); !!}"><span  class="lang" key="uCommittee">Under committee</span></a></li></center>
+                      <center><li><a href="{!! url('/comittee/partial'); !!}"><span>{{ __('key.pCommittee') }}</span></a></li></center>
+                      <center><li><a href="{!! url('/comittee/under'); !!}"><span>{{ __('key.uCommittee') }}</span></a></li></center>
                     </ul>
                 </li>
-                <li><a href="{!! url('/'); !!}#news"><span class="lang" key="news">News</span></a></li>
-                <li><a href="{!! url('/'); !!}#team"><span class="lang" key="boardmember">BoardMember</span></a></li>
-                <li><a href="{!! url('/gallery'); !!}"><span class="lang" key="gallery">Gallery</span></a></li>
-                <li><a href="{!! url('/contact'); !!}"><span class="lang" key="contact">Contact</span></a></li>
+                <li><a href="{!! url('/'); !!}#news"><span>{{ __('key.news') }}</span></a></li>
+                <li><a href="{!! url('/'); !!}#team"><span>{{ __('key.boardmember') }}</span></a></li>
+                <li><a href="{!! url('/gallery'); !!}"><span>{{ __('key.gallery') }}</span></a></li>
+                <li><a href="{!! url('/contact'); !!}"><span>{{ __('key.contact') }}</span></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <p class="text-white text-underline">Check your Language?</p>
-                <button class="translate" id="en">English</button>
-                <button class="translate" id="np">Nepali</button>
+                <center><p class="text-white text-underline">{{ __('key.langType')}}?</p></center>
+                 <a class="btn text-white " href="{{ route('set.language','en') }}" id="en">{{ __('key.langBtnEn')}}</a>
+                 <a class="btn text-white " href="{{ route('set.language','np') }}" id="np">{{ __('key.langBtnNp')}}</a>
             </ul>
         </div>
     </nav>

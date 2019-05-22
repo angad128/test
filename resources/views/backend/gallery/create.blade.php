@@ -1,6 +1,7 @@
 @extends('backend/app')
+@section('title', 'Gallery Create')
 @section('contents')
-
+	<h2>Add To Gallery</h2>
    <form method="post" class="container" action="{{URL::to('/gallery/upload')}}" enctype="multipart/form-data">
     @csrf
 	    <div class="form-group">

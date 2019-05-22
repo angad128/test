@@ -1,5 +1,5 @@
 @extends('app')
-
+@section('title', 'Partial Comittee')
 @section('contents')
 <div id="body" class="container-fluid">
 	<div class="container">

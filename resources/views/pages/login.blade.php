@@ -1,4 +1,5 @@
 @extends('app')
+@section('title', 'Login')
 @section('contents')
 <div style="margin-top: 20px;" id="body">
   <div class="container login ">

@@ -1,6 +1,5 @@
 @extends('backend/app')
-
-
+@section('title', 'Legislation Create')
 @section('contents')
 
 	<h2>Add Legislation</h2>
@@ -11,10 +10,10 @@
 				<input class="form-control" type="text" id="filename" name="filename" placeholder="File Name">
 			</div>
 
-			<div class="form-group">
-				<label for="description">Body</label>
-				<textarea name="body" id="editor" placeholder="Write your News description"></textarea>
-			</div>
+		    <div class="form-group">
+		        <label for="body">Body</label>
+		        <input class="form-control" type="file" id="body" name="img" accept="application/pdf">
+		    </div>
 
 			<button type="submit" class="btn btn-sm btn-primary hvr-sweep-to-right">Save</button>
 			{{ csrf_field() }}

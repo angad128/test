@@ -14,7 +14,7 @@ class GalleryController extends Controller
     {
         if (Session::get('username')) {
             $result = DB::table('gallery')
-                    ->paginate(12);
+                    ->get();
             return view('backend/gallery/view')->with('data',$result);
         }
         else {
@@ -59,10 +59,72 @@ class GalleryController extends Controller
 
             $result = DB::table('gallery')->insert($data);
             if ($result) {
-                return Redirect::to('/gallery/view')->with('success',"News Sucessfully Published.");
+                return Redirect::to('/gallery/view')->with('success',"gallery Sucessfully Published.");
             }
             else {
                 return Redirect::to('/gallery/view')->with('error','Fill all the forms correctly.');  
+            }
+        }
+        else {
+            return back()->with('error','To access Dashboard,Please Login First.');
+        }
+    }
+
+
+     public function editgallery($id){
+        if (Session::get('username')) {
+            $result = DB::table('gallery')
+                    ->where('id',$id)
+                    ->first();
+
+            return view('backend/gallery/edit')->with('data',$result);
+        }
+        else {
+            return back()->with('error','To access Dashboard,Please Login First.');
+        }
+    }
+
+
+    public function  updategallery(Request $request){
+        if (Session::get('username')) {
+            if (empty($request->filename)) {
+                $filename= DB::table('gallery')->select('filename')->where('id',$request->id)->get(); 
+            }
+            if (empty($request->filedesc)) {
+                $filedesc= DB::table('gallery')->select('filedesc')->where('id',$request->id)->get(); 
+            }
+            if ($request->hasFile('img')) {
+                $ext = $request->img->getClientOriginalExtension();
+                $randFileName = rand(100,100000);
+                $imageName = $randFileName.'.'.$ext;
+                $imagePath = public_path('upload/gallery/');
+                $uploaded = $request->img->move( $imagePath ,$imageName);
+            }else{
+                $image = DB::table('gallery')->select('img')->where('id',$request->id)->get(); 
+                foreach ($image as $key) {
+                    foreach ($key as $value) {
+                        $imageName = $value;
+                    }
+                }
+            }
+            $this->validate($request,[
+                'filename' => 'required',
+                'filedesc' => 'required',
+            ]);
+
+            $data = array();
+            $data['filename'] = $request->filename;
+            $data['filedesc'] = $request->filedesc;
+            $data['img'] = $imageName;
+            $data['updated_at'] = now();
+
+
+            $result = DB::table('gallery')->where('id',$request->id)->update($data);
+            if ($result) {
+                return Redirect::to('/gallery/view')->with('success','Successfully Updated!');
+            }
+            else {
+                return Redirect::to('/gallery/view')->with('error','Failed to Update gallery!');  
             }
         }
         else {

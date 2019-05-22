@@ -1,4 +1,5 @@
 @extends('backend/app')
+@section('title', 'Notice View')
 @section('contents')
 <!-- Page Heading -->
 <!-- DataTales Example -->

@@ -20,6 +20,10 @@ class BasicController extends Controller
         return view('pages/index')->with(compact('news_data', 'legislations_data','notice_data'));
     }
 
+    public function pagenotfound(){
+       return view('errors.404'); 
+    }
+
     public function about(){
     	return view('pages/about');
     }
@@ -38,13 +42,8 @@ class BasicController extends Controller
 
     public function gallery(){
         $result = DB::table('gallery')
-                    ->paginate(12);
+                    ->get();
     	return view('pages/gallery')->with('data',$result);
-    }
-
-    public function viewNewsById($id){
-        $result = DB::table('news')->where('id',$id)->get();
-        return view('pages/news_view')->with('data',$result);
     }
 
 }

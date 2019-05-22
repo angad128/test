@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @include('include/header')
+        <title>Pllannepal - @yield('title')</title>
         @yield('styles')
     </head>
 

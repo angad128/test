@@ -5,26 +5,26 @@
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 footer-contact-detail text-white">
           <center>
-          <h3>PLLANNEPAL</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            <h3>PLLANNEPAL</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
           </center>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 footer-contact-links text-white">
           <center>
-          <h3><span class="lang" key="location">Our Location</span></h3>
-          <div class="map-footer">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d113057.08357618727!2d85.27882751265581!3d27.685348287058456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x39eb198c8d6a0639%3A0x99903dada8289577!2sTinkune+kathmandu!3m2!1d27.685365899999997!2d85.3488678!5e0!3m2!1sne!2snp!4v1503650828640" width="600" height="450" frameborder="0" allowfullscreen></iframe>
-          </div>
+            <h3><span>{{ __('key.location') }}</span></h3>
+            <div class="map-footer">
+              <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1PLlCleFap6mD76Cu11_aehlnuCRL5e2i" width="600" height="450"></iframe>
+            </div>
           </center>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 footer-contact-info text-white">
           <center><h3><span class="lang" key="conatct-details">Contact Details</span></h3></center>
           <ul class="contact">
-            <li><i class="fas fa-map-marker-alt"></i>   <span class="lang" key="place"> Kathmandu, Nepal</span></li>
-            <li><i class="fas fa-phone-volume"></i>   <span class="lang" key="telephone"> Telephone: +977-01-4445789</span></li>
-            <li><i class="fas fa-phone-volume"></i>   <span class="lang" key="fax"> Fax:  +977-01-4412426</span></li>
-            <li><i class="fas fa-envelope"></i>   <span class="lang" key="pbo">P.B.No.: +977-01-23264</span></li>
-            <li><i class="fas fa-envelope"></i>   <span> pllannepal2072@gmail.com</span></li>
+            <li><i class="fas fa-map-marker-alt"></i><span>{{ __('key.place') }}</span></li>
+            <li><i class="fas fa-phone-volume"></i><span>{{ __('key.telephone') }}</span></li>
+            <li><i class="fas fa-phone-volume"></i><span>{{ __('key.fax') }}</span></li>
+            <li><i class="fas fa-envelope"></i><span>{{ __('key.pbo') }}</span></li>
+            <li><i class="fas fa-envelope"></i><span> pllannepal2072@gmail.com</span></li>
           </ul>
         </div>
       </div>

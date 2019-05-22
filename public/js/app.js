@@ -1,6 +1,3 @@
-
-
-
 $('#closePopUpModal').click(function(){
   $('#popUpMain').css('display','none');
 });

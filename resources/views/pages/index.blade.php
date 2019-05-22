@@ -1,5 +1,5 @@
 @extends('app')
-
+@section('title', 'Home')
 @section('contents')
         <div id="popUpMain" class="container">
             <div id="popUp">
@@ -68,7 +68,7 @@
         <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-12 news-box">
           <div class="forfaicon"><i class="fa fa-file"></i></div>
           <div class="new-box-content">
-            <h3 class="text-underline"><span class="lang" key="news-title">News</span></h3>
+            <h3 class="text-underline"><span>{{ __('key.news-title') }}</span></h3>
             <div class="rpwe-block ">
               <ul class="rpwe-ul">
               @if(count($news_data)>0)
@@ -94,29 +94,16 @@
         <div  class="col-lg-6 col-md-6 col-sm-6 col-xs-12 news-box download-box">
           <div class="forfaicon"><i class="fa fa-book"></i></div>
           <div class="new-box-content">
-            <h3 class="text-underline"><span class="lang" key="regulation">Legislation/Regulation</span></h3>
+            <h3 class="text-underline"><span>{{ __('key.regulation') }}</span></h3>
             <div class="table-responsive">
               <table class="table table-bordered" style="overflow: scroll;">
                 <tbody>
+                  @foreach($legislations_data as $l_data)
                   <tr>
-                    <td colspan="6"><i class="fas fa-file-pdf"></i> <strong class="download-description"><p>पाठ्यक्रम तथा परीक्षा सञ्चालन नियमावली, २०५५</p></strong></td> <td>Table cell</td> <td><button class="btn btn-primary hvr-sweep-to-right" type="button"><span class="lang" key="viewBtn">
-                    View</span></button></td>
+                    <td colspan="8"><i class="fas fa-file-pdf"></i> <strong class="download-description"><p>{{$l_data->filename}}</p></strong></td><td><a href="/generate-pdf/{{$l_data->id}}" class="btn btn-primary hvr-sweep-to-right btnView" type="button"><span>
+                    {{ __('key.viewBtn') }}</span></a></td>
                   </tr>
-                  <tr>
-                    <td colspan="6"><i class="fas fa-file-pdf"></i> <strong class="download-description"><p>पाठ्यक्रम तथा परीक्षा सञ्चालन नियमावली, २०५५</p></strong></td> <td>Table cell</td> <td><button class="btn btn-primary hvr-sweep-to-right" type="button">
-                    <span class="lang" key="viewBtn">
-                      View</span></button></td>
-                   </tr>
-                  <tr>
-                    <td colspan="6"><i class="fas fa-file-pdf"></i> <strong class="download-description"><p>पाठ्यक्रम तथा परीक्षा सञ्चालन नियमावली, २०५५</p></strong></td> <td>Table cell</td> <td><button class="btn btn-primary hvr-sweep-to-right" type="button">
-                    <span class="lang" key="viewBtn">
-                      View</span></button></td>
-                  </tr>
-                  <tr>
-                    <td colspan="6"><i class="fas fa-file-pdf"></i> <strong class="download-description"><p>पाठ्यक्रम तथा परीक्षा सञ्चालन नियमावली, २०५५</p></strong></td> <td>Table cell</td> <td><button class="btn btn-primary hvr-sweep-to-right" type="button">
-                    <span class="lang" key="viewBtn">
-                      View</span></button></td>
-                  </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
@@ -127,7 +114,7 @@
   </div>
   <div id="team">
     <div class="container">
-      <h2 class="center-align"><span class="lang" key="team">OUR TEAM</span></h2>
+      <h2 class="center-align"><span>{{ __('key.team') }}</span></h2>
       <div class="slider">
         <div class="owl-carousel" id="slider">
           <center>

@@ -1,6 +1,6 @@
 @extends('backend/app')
 
-
+@section('title', 'Notice Edit')
 @section('contents')
 
 	<h2>Edit Notice</h2>

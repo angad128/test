@@ -1,6 +1,5 @@
 @extends('backend/app')
-
-
+@section('title', 'Member Create')
 @section('contents')
 	<h2>Add Member</h2>		
     <form method="POST" action="{{ URL::to('/members/create') }}" enctype="multipart/form-data">

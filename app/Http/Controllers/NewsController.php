@@ -8,7 +8,12 @@ use DB;
 use Redirect;
 
 class NewsController extends Controller
-{
+{   
+    public function viewNewsById($id){
+        $result = DB::table('news')->where('id',$id)->get();
+        return view('pages/news_view')->with('data',$result);
+    }
+    
     public function viewNews(){        
         if (Session::get('username')) {
             $result = DB::table('news')

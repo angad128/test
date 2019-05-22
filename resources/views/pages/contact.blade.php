@@ -1,11 +1,13 @@
 @extends('app')
+@section('title', 'Contact')
 @section('contents')
 <div id="body" class="container-fluid">
 	
 	<div class="container" style="margin-bottom: 120px; ">
 		<div class="map">
 			<h2>Contact Us</h2>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d113057.08357618727!2d85.27882751265581!3d27.685348287058456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x39eb198c8d6a0639%3A0x99903dada8289577!2sTinkune+kathmandu!3m2!1d27.685365899999997!2d85.3488678!5e0!3m2!1sne!2snp!4v1503650828640" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1PLlCleFap6mD76Cu11_aehlnuCRL5e2i" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			
 		</div>
 		<div class="contact-grids">
 			<div class="col-md-3 contact-grid">

@@ -1,8 +1,6 @@
 @extends('backend/app')
+@section('title', 'Legislation View')
 @section('contents')
-<!-- Page Heading -->
-<!-- DataTales Example -->
-
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <div class="row">
@@ -18,7 +16,6 @@
         <thead>
           <tr>
             <th>Filetitle</th>
-            <th>File</th>
             <th>Created</th>
             <th>Updated</th>
             <th>Action</th>
@@ -27,7 +24,6 @@
         <tfoot>
         <tr>
           <th>Filetitle</th>
-          <th>File</th>
           <th>Created</th>
           <th>Updated</th>
           <th>Action</th>
@@ -41,7 +37,6 @@
           @foreach($data as $result)
           <tr>
             <td>{{$result->filename}}</td>
-            <td>{{ str_limit($result->body, $limit = 40) }}..</td>
             <td>{{$result->created_at}}</td>
             <td>{{$result->updated_at}}</td>
             <td>

@@ -1,10 +1,7 @@
 @extends('backend/app')
-
-
+@section('title', 'Member Edit')
 @section('contents')
-
 	<h2>Edit Member</h2>
-		
     <form method="POST" action="{{ URL::to('/members/update/' .$data->id ) }}" enctype="multipart/form-data">
 			<div class="row">
     			<div class="col-lg-6 col-md-6 col-sm-6">

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Pllannepal- Dashboard</title>
+  <title>Pllannepal - @yield('title')</title>
   @include('backend/include/header')
   @yield('styles')
 </head>

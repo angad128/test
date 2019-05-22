@@ -28,7 +28,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="{{URL::to('/news')}}">
+        <a class="nav-link" href="{{URL::to('/news/view')}}">
           <i class="fas fa-newspaper"></i>
           <span>News</span>
         </a>

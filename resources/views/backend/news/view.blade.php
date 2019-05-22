@@ -1,4 +1,5 @@
 @extends('backend/app')
+@section('title', 'News View')
 @section('contents')
 
 <!-- DataTales Example -->
@@ -6,7 +7,7 @@
   <div class="card-header py-3">
     <div class="row">
       <div class="col col-lg-3 col-md-4 col-sm-5 col-xs-6  pull-right ">
-        <h6 class="m-0 font-weight-bold text-primary"><a class="btn btn-sm btn-primary hvr-sweep-to-right btn-news" href="/news/create"><i class="fas fa-plus"></i>Create News</a></h6>
+        <h6 class="m-0 font-weight-bold text-primary"><a class="btn btn-sm btn-primary hvr-sweep-to-right btn-news" href="{{URL::to('/news/create')}}"><i class="fas fa-plus"></i>Create News</a></h6>
       </div>
     </div>
   </div>

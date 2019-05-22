@@ -1,4 +1,5 @@
 @extends('backend/app')
+@section('title', 'Gallery View')
 @section('contents')
 <div class="about-us">
 	<div class="row">
@@ -6,18 +7,24 @@
 		<div class="col col-lg-3 col-md-4 col-sm-5 col-xs-6 pull-right"><a class="btn btn-sm btn-primary hvr-sweep-to-right btn-gallery" href="/gallery/upload">Add to Gallery</a></div>
 	</div>
 	@if(count($data)>0)
-	<div class="gallery-container">
-		@foreach($data as $result)
-		<a href="#">
-			<div class="img" style=" background-image: url(/upload/gallery/<?=$result->img?>);"></div>
-			<h3>{{$result->filename}}</h3>
-			<p class="text-center">{{$result->filedesc}}</p>
-		</a>
-		@endforeach
+	<div class="scrollmenu">
+     	 	@foreach($data as $result)
+	            <img  class="img img-responsive" src="/upload/gallery/{{$result->img}}" onclick="galleryFunction(this);">
+	        @endforeach
 	</div>
-	{{ $data->links() }}
+
+	<div class="row"> 
+	        <div class="dashboard-gallery column-right pull-left">
+	        	 <div class="container gallery-container">
+		            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+		            <img id="expandedImg" class="img img-responsive">
+		            <div id="imgtext"></div>
+		        </div>
+	        </div>
+    </div>
 	@else
-      <div class="alert alert-danger alert-block">Sorry, image is published!</div>
+      <div class="alert alert-danger alert-block">Sorry, No Image is published on gallery!</div>
     @endif
 </div>
+
 @endsection

@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use Session;
 use DB;
 use Redirect;
+use File;
 
 class LegislationController extends Controller
 {
+
     public function getLegislation()
     {
         if (Session::get('username')) {
@@ -33,14 +35,21 @@ class LegislationController extends Controller
 
     public function postLegislation(Request $request){
         if (Session::get('username')) {
+           if ($request->hasFile('img')) {
+            $ext = $request->img->getClientOriginalExtension();
+            $randFileName = rand(100,100000);
+            $imageName = $randFileName.'.'.$ext;
+            $imagePath = public_path('upload/legislations/');
+            $uploaded = $request->img->move( $imagePath ,$imageName);
+            }
+
             $this->validate($request,[
                 'filename' => 'required',
-                'body' => 'required',
             ]);
 
             $data = array();
             $data['filename'] = $request->filename;
-            $data['body'] = $request->body;
+            $data['body'] = $imageName;
             $data['created_at'] = now();
             $result = DB::table('legislations')->insert($data);
             if ($result) {
@@ -75,18 +84,28 @@ class LegislationController extends Controller
             if (empty($request->filename)) {
                 $filename= DB::table('legislations')->select('filename')->where('id',$request->id)->get(); 
             }
-            if (empty($request->body)) {
-                $body= DB::table('legislations')->select('body')->where('id',$request->id)->get(); 
+            if ($request->hasFile('img')) {
+                $ext = $request->img->getClientOriginalExtension();
+                $randFileName = rand(100,100000);
+                $imageName = $randFileName.'.'.$ext;
+                $imagePath = public_path('upload/news/');
+                $uploaded = $request->img->move( $imagePath ,$imageName);
+            }else{
+                $image = DB::table('legislations')->select('body')->where('id',$request->id)->get(); 
+                foreach ($image as $key) {
+                    foreach ($key as $value) {
+                        $imageName = $value;
+                    }
+                }
             }
 
             $this->validate($request,[
                 'filename' => 'required',
-                'body' => 'required',
             ]);
 
             $data = array();
             $data['filename'] = $request->filename;
-            $data['body'] = $request->body;
+            $data['body'] = $imageName;
             $data['updated_at'] = now();
 
 
