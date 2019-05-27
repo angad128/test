@@ -7,7 +7,6 @@
     </head>
 
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
-
         <div id="container">
             @include('include/navbar')
 
@@ -15,8 +14,6 @@
            
             @include('include/footer')
         </div>
-
-        
         @include('include/scripts')
         @yield('scripts')
     </body>

@@ -18,7 +18,7 @@
           </center>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 footer-contact-info text-white">
-          <center><h3><span class="lang" key="conatct-details">Contact Details</span></h3></center>
+          <center><h3><span class="lang" key="conatct-details">{{__('key.contact')}}</span></h3></center>
           <ul class="contact">
             <li><i class="fas fa-map-marker-alt"></i><span>{{ __('key.place') }}</span></li>
             <li><i class="fas fa-phone-volume"></i><span>{{ __('key.telephone') }}</span></li>

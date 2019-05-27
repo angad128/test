@@ -106,6 +106,7 @@
                   @endforeach
                 </tbody>
               </table>
+              <center>{{ $legislations_data->links() }}</center>
             </div>
           </div>
         </div>
@@ -117,55 +118,17 @@
       <h2 class="center-align"><span>{{ __('key.team') }}</span></h2>
       <div class="slider">
         <div class="owl-carousel" id="slider">
+          @foreach($members_data as $m_data)
           <center>
             <div class="item card">
-              <div class="team-img"> <img class="card-img-top" src="images/teacher1.jpg" alt="Card image cap"></div>
+              <div class="team-img"> <img class="card-img-top" src="upload/member/{{$m_data->img}}" alt="Card image cap"></div>
               <div class="card-block">
-                <h4 class="card-title">Mrs. Bidya Limbu</h4>
-                <p class="text-center">Chairman</p>
+                <h4 class="card-title">{{$m_data->name}}</h4>
+                <p class="text-center">{{$m_data->title}}</p>
               </div>
             </div>
           </center>
-          <center>
-            <div class="item card">
-              <div class="team-img"> <img class="card-img-top" src="images/teacher3.jpg" alt="Card image cap"></div>
-              
-              <div class="card-block">
-                <h4 class="card-title">Mr.Umesh Shrestha</h4>
-                <p class="text-center">Senior Vice-Chairman</p>
-              </div>
-            </div>
-          </center>
-          <center>
-            <div class="item card">
-              <div class="team-img"> <img class="card-img-top" src="images/teacher4.jpg" alt="Card image cap"></div>
-              
-              <div class="card-block">
-                <h4 class="card-title">Mr. Mukunda Pr. Sharma </h4>
-                <p class="text-center">Finance Director</p>
-              </div>
-            </div>
-          </center>
-          <center>
-            <div class="item card">
-              <div class="team-img"> <img class="card-img-top" src="images/teachr5.jpg" alt="Card image cap"></div>
-              
-              <div class="card-block">
-                <h4 class="card-title">Mrs. Renu Rajbahak</h4>
-                <p class="text-center">Chairman</p>
-              </div>
-            </div>
-          </center>
-          <center>
-            <div class="item card">
-              <div class="team-img"> <img class="card-img-top" src="images/teacher6.jpg" alt="Card image cap"></div>
-              
-              <div class="card-block">
-                <h4 class="card-title">Mr.Rajesh Bhandari</h4>
-                <p class="text-center">Vice Principal</p>
-              </div>
-            </div>
-          </center>
+          @endforeach
         </div>
       </div>
     </div>

@@ -12,23 +12,23 @@
     			</div>
     			<div class="col-lg-6 col-md-6 col-sm-6">
     				<div class="form-group">
-    					<label for="degination">{{__('key.degination')}}</label>
+    					<label for="title">{{__('key.degination')}}</label>
 						<select name="title" style="width: 100%;">
 						    <option value="nonselected" selected disabled>----------</option>
 						    <option value="chairman">Chairman</option>
-						    <option value="sVC">Senior Vice-Chairman</option>
-						    <option value="VC1">Vice-Chairman (State-1)</option>
-						    <option value="VC2">Vice-Chairman (State-2)</option>
-						    <option value="VC3">Vice-Chairman (State-3)</option>
-						    <option value="VC4">Vice-Chairman (State-4)</option>
-						    <option value="VC5">Vice-Chairman (State-5)</option>
-						    <option value="VC6">Vice-Chairman (State-6)</option>
-						    <option value="VC7">Vice-Chairman (State-7)</option>
-						    <option value="gSecretary">Secretary General</option>
-						    <option value="secretary">Secretary</option>
-						    <option value="treasury">Treasury</option>
-						    <option value="jTresaury">Juniour Treasury</option>
-						    <option value="members">Members</option>
+						    <option value="Senior Vice-Chairman">Senior Vice-Chairman</option>
+						    <option value="Vice-Chairman (State-1)">Vice-Chairman (State-1)</option>
+						    <option value="Vice-Chairman (State-2)">Vice-Chairman (State-2)</option>
+						    <option value="Vice-Chairman (State-3)">Vice-Chairman (State-3)</option>
+						    <option value="Vice-Chairman (State-4)">Vice-Chairman (State-4)</option>
+						    <option value="Vice-Chairman (State-5)">Vice-Chairman (State-5)</option>
+						    <option value="Vice-Chairman (State-6)">Vice-Chairman (State-6)</option>
+						    <option value="Vice-Chairman (State-7)">Vice-Chairman (State-7)</option>
+						    <option value="Secretary General">Secretary General</option>
+						    <option value="Secretary">Secretary</option>
+						    <option value="Treasury">Treasury</option>
+						    <option value="Juniour Tresaury">Juniour Treasury</option>
+						    <option value="Members">Members</option>
 						</select>
 					</div>
     			</div>

@@ -16,8 +16,7 @@ class NoticeController extends Controller
             return view('backend/notice/view')->with('data',$result);
         }
         else {
-            Session::put('exception', 'To access Dashboard,Please Login First.');
-            return Redirect::to('/');
+            return Redirect::to('/')->with('error', 'To access Dashboard,Please Login First.');
         }
     	
     }
@@ -44,12 +43,10 @@ class NoticeController extends Controller
             $data['created_at'] = now();
             $result = DB::table('notices')->insert($data);
             if ($result) {
-                Session::put('success','Successfully Published!');
-                return Redirect::to('/notice/view');
+                return Redirect::to('/notice/view')->with('success','Successfully Published!');
             }
             else {
-                Session::put('exception','Failed to publish!');
-                return Redirect::to('/notice/create');  
+                return Redirect::to('/notice/create')->with('exception','Failed to publish!');  
             }
         }
         else {

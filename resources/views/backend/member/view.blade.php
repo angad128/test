@@ -43,14 +43,14 @@
             <td>{{$result->title}}</td>
             <td><img style="width: 80px;height: 80px;" src="/upload/member/<?=$result->img?>"/></td>
             <td>
-              <a class="btn btn-success action" href="{{ URL::to('members/'.$result->id.'/edit')}}"><i class="fas fa-pencil-alt"></i>{{__('key.edit')}}</a>
-              <a class="btn btn-danger action open-modal" data-toggle="modal" data-target="#deleteModal" data-id="{{$result->id}}" onclick="passId(<?=$result->id;?>)"><i class="fas fa-trash-alt"></i>{{__('key.delete')}}</a>
+              <a class="btn btn-success action" href="{{ URL::to('members/'.$result->id.'/edit')}}"><i class="fas fa-pencil-alt"></i><span class="hide_on_md_screen">{{__('key.edit')}}</span></a>
+              <a class="btn btn-danger action open-modal" data-toggle="modal" data-target="#deleteModal" data-id="{{$result->id}}" onclick="passId(<?=$result->id;?>)"><i class="fas fa-trash-alt"></i><span class="hide_on_md_screen">{{__('key.delete')}}</span></a>
             </td>
           </tr>
           @endforeach
         </tbody>
       </table>
-      {{ $data->links() }}
+      <div style="width: 120px;">{{ $data->links() }}</div>      
     </div>
       @else
       <div class="alert alert-danger alert-block">Sorry, currently no member is added yet!</div>

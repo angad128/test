@@ -53,12 +53,10 @@ class LegislationController extends Controller
             $data['created_at'] = now();
             $result = DB::table('legislations')->insert($data);
             if ($result) {
-                Session::put('success','Successfully Published!');
-                return Redirect::to('/legislations/view');
+                return Redirect::to('/legislations/view')->with('success','Successfully Published!');
             }
             else {
-                Session::put('exception','Failed to publish!');
-                return Redirect::to('/legislations/create');  
+                return Redirect::to('/legislations/create')->with('exception','Failed to publish!');  
             }
         }
         else {

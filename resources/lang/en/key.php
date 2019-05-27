@@ -22,6 +22,11 @@
 
         "team"=> "Our Team",
 
+        "contact_us" => "Contact Us",
+        "dillibazar" => "Dillibazar",
+        "telephone_no" => "+977-01-4445789",
+        "conatct_title" => "Reach out to us and we'll respond as soon as we can.",
+
         "location"=> "Our Location",
 
         "conatct-details"=> "Contact Details",
@@ -49,7 +54,7 @@
 
         'edit' => 'Edit',
         'delete' => 'Delete',
-        'close' => 'Cancle',
+        'close' => 'Close',
 
         'create_new' => 'Add',
 

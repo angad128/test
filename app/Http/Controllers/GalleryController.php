@@ -18,8 +18,7 @@ class GalleryController extends Controller
             return view('backend/gallery/view')->with('data',$result);
         }
         else {
-            Session::put('exception', 'To access Dashboard,Please Login First.');
-            return Redirect::to('/');
+            return Redirect::to('/')->with('exception', 'To access Dashboard,Please Login First.');
         }
     	
     }
@@ -29,8 +28,7 @@ class GalleryController extends Controller
             return view('backend/gallery/create');
         }
         else {
-            Session::put('exception', 'To access Dashboard,Please Login First.');
-            return Redirect::to('/');
+            return Redirect::to('/')->with('exception', 'To access Dashboard,Please Login First.');
         }
         
     }

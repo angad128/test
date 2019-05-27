@@ -13,12 +13,11 @@ class MemberController extends Controller
     {
         if (Session::get('username')) {
             $result = DB::table('members')
-                    ->paginate(5);
+                    ->paginate(4);
             return view('backend/member/view')->with('data',$result);
         }
         else {
-            Session::put('exception', 'To access Dashboard,Please Login First.');
-            return Redirect::to('/');
+            return Redirect::to('/')->with('exception', 'To access Dashboard,Please Login First.');
         }
     	
     }
@@ -34,17 +33,16 @@ class MemberController extends Controller
 
     public function postMember(Request $request){
         if (Session::get('username')) {
-           if ($request->hasFile('img')) {
-            $ext = $request->img->getClientOriginalExtension();
-            $randFileName = rand(100,100000);
-            $imageName = $randFileName.'.'.$ext;
-            $imagePath = public_path('upload/member/');
-            $uploaded = $request->img->move( $imagePath ,$imageName);
+            if ($request->hasFile('img')) {
+                $ext = $request->img->getClientOriginalExtension();
+                $randFileName = rand(100,100000);
+                $imageName = $randFileName.'.'.$ext;
+                $imagePath = public_path('upload/member/');
+                $uploaded = $request->img->move( $imagePath ,$imageName);
             }
             $this->validate($request,[
                 'name' => 'required',
                 'title' => 'required',
-                'imageName' => 'required',
             ]);
 
             $data = array();
@@ -54,12 +52,10 @@ class MemberController extends Controller
             $data['created_at'] = now();
             $result = DB::table('members')->insert($data);
             if ($result) {
-                Session::put('success','Successfully Published!');
-                return Redirect::to('/members/view');
+                return Redirect::to('/members/view')->with('success','Successfully Published!');
             }
             else {
-                Session::put('exception','Failed to publish!');
-                return Redirect::to('/members/create');  
+                return Redirect::to('/members/create')->with('exception','Failed to publish!');  
             }
         }
         else {
@@ -85,7 +81,9 @@ class MemberController extends Controller
             if (empty($request->name)) {
                 $name= DB::table('members')->select('name')->where('id',$request->id)->get(); 
             }
-
+            if (empty($request->title)) {
+                $title= DB::table('members')->select('title')->where('id',$request->id)->get(); 
+            }
             if ($request->hasFile('img')) {
                 $ext = $request->img->getClientOriginalExtension();
                 $randFileName = rand(100,100000);
@@ -103,7 +101,6 @@ class MemberController extends Controller
             $this->validate($request,[
                 'name' => 'required',
                 'title' => 'required',
-                'imageName' => 'required',
             ]);
 
             $data = array();
@@ -118,14 +115,13 @@ class MemberController extends Controller
                 return Redirect::to('/members/view')->with('success','Successfully Updated!');
             }
             else {
-                return Redirect::to('/members/view')->with('error','Failed to Update Member!');  
+                return Redirect::to('/members/view')->with('error','Failed to Update news!');  
             }
         }
         else {
             return back()->with('error','To access Dashboard,Please Login First.');
         }
     }
-
 
 
     public function destroy(Request $request)

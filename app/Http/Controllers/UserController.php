@@ -28,11 +28,10 @@ class UserController extends Controller
  
     	if ($result) {
     		Session::put('username',$result->username);
-    		return Redirect::to('/dashboard');
+    		return Redirect::to('/dashboard')->with('sucess','Sucessfully logged in.');
     	}
     	else {
-    		Session::put('exception', 'Invalid username or password.');
-    		return Redirect::to('/login');
+    		return Redirect::to('/login')->with('exception', 'Invalid username or password.');;
     	}
     }
 

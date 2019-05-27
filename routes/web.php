@@ -63,7 +63,7 @@ Route::post('/legislations/create','LegislationController@postLegislation');
 Route::get('/legislations/{id}/edit','LegislationController@editLegislation');
 Route::post('/legislations/update/{id}','LegislationController@updateLegislation');
 Route::post('/legislations/delete','LegislationController@destroy');
-// Route::get('/legislations/{id}','LegislationController@viewLegislationsById');
+
 
 Route::get('/members/view','MemberController@getMember');
 Route::get('/members/create','MemberController@createMember');

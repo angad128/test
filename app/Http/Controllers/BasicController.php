@@ -9,7 +9,6 @@ class BasicController extends Controller
 {
     public function home(){
         $notice_data =  DB::table('notices')
-                 ->orderBy('created_at', 'desc')
                  ->limit(1)
                  ->get();
         $news_data =  DB::table('news')
@@ -17,7 +16,10 @@ class BasicController extends Controller
                  ->limit(5)
                  ->get();
         $legislations_data = DB::table('legislations')->paginate(5);
-        return view('pages/index')->with(compact('news_data', 'legislations_data','notice_data'));
+        $members_data = DB::table('members')
+                 ->orderBy('id', 'asc')
+                 ->get();
+        return view('pages/index')->with(compact('news_data', 'legislations_data','notice_data','members_data'));
     }
 
     public function pagenotfound(){

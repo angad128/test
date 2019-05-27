@@ -5,7 +5,7 @@
 	
 	<div class="container" style="margin-bottom: 120px; ">
 		<div class="map">
-			<h2>Contact Us</h2>
+			<h2>{{__('key.contact_us')}}</h2>
 			<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1PLlCleFap6mD76Cu11_aehlnuCRL5e2i" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 			
 		</div>
@@ -17,7 +17,7 @@
 					</div>
 					<div class="col-xs-9 contact-grdr">
 						<ul>
-							<li>+977-01-4445789 </li>
+							<li>{{ __('key.telephone_no') }}</li>
 						</ul>
 					</div>
 					<div class="clearfix"> </div>
@@ -28,8 +28,8 @@
 					</div>
 					<div class="col-xs-9 contact-grdr">
 						<ul>
-							<li>Dillibazar, Kathmandu</li>
-							<li>Nepal.</li>
+							<li>{{__('key.dillibazar')}},</li>
+							<li>{{__('key.place')}}.</li>
 						</ul>
 					</div>
 					<div class="clearfix"> </div>
@@ -48,7 +48,7 @@
 			</div>
 			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 				<div class="contact-title">
-					<p>Reach out to us and we'll respond as soon as we can</p>
+					<p>{{__('key.contact_title')}}</p>
 				</div>
 
 				@if($message = Session::get('success'))

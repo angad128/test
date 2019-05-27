@@ -19,15 +19,16 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   color: #fff;
   background-color:#355664; 
   opacity: 0.9;
   z-index: 10000;
+    /* Full height of website*/
+  height: 113.2%; 
 }
 #popUp {
   width: 80%;
-  height: 90%;
+  height: 100%;
   margin: 5% 10% 5% 10%;
 }
 .popUpBtn {
@@ -58,7 +59,6 @@ body {
 }
 .navbar, .footer {
    background-color:#00AEEF;
-   /** #00AEEF; **/
 }
 
 .top-ul-left {
@@ -118,6 +118,7 @@ ul.nav.navbar-nav.navbar-left  li + li:before{
     content: " | ";
     position: absolute;
     top: 27px;
+    color: #fff;
     font-size: 25px;
     font-weight: bold;
 }
@@ -129,7 +130,7 @@ ul.nav.navbar-nav.navbar-left li a {
     padding: 30px 20px 20px 20px;
 }
 ul.nav.navbar-nav.navbar-left li a:hover, .hvr-float-shadow i:hover {
-  color: #bfc1cd;
+  color: black;
   background-color: transparent;
 }
 
@@ -226,7 +227,7 @@ ul.nav.navbar-nav.navbar-right p{
 
 #details .news-box {
   border: 2px solid #cec2c2;
-  border-radius: 80px;
+  border-radius: 50px;
   height: 520px;
 }
 
@@ -318,7 +319,8 @@ font-family: Catamaran;
 #team .team-img {
   position: relative;
   overflow: hidden;
-  width: 220px;
+  width: 240px;
+  height: 190px;
 }
 #team .team-img img {
   max-width: 100%;
@@ -502,6 +504,12 @@ font-family: Catamaran;
     .download-box {
       margin-top: 45px;
     }  
+    .hide_on_md_screen {
+      display: none;
+    }
+    table td a {
+      margin-top: 3px;
+    }
 }
 
 @media (max-width: 767px) { 
@@ -538,6 +546,22 @@ font-family: Catamaran;
     padding: 10px 20px 10px 20px;
     height: 40px;
   }
+
+  .dropdown .dropdown-toggle .caret {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    top: -1px;
+    position: relative;
+  }
+  ul.dropdown-menu-right {
+    position: absolute;
+    top: -10px;
+    right: 20%;
+  }
+
   #myCarousel .item img {
     width: 100%;
     height: 320px;
@@ -555,19 +579,7 @@ font-family: Catamaran;
    #myCarousel .item .carousel-caption h1 {
     font-size: 35px;
   }
-  .thumbnail {
-    min-width: 100%;
-    margin-top: 20px;
-  }
-  .event {
-    padding-left: 20px;
 
-  }
-  .eve-box h3, .news-box h3 {
-    padding: 0px;
-    margin: 10px 0px 5px 0px;
-    text-align: center;
-  }
  .news {
     margin-top: 15px;
     width: 350px;
@@ -583,19 +595,40 @@ font-family: Catamaran;
     padding-top: 5px;
     margin-top: 35px;
   }
-.footer {
-    margin: 0px 0px 0px 0px;
-    padding: 0px;
+  .footer {
+      margin: 0px 0px 0px 0px;
+      padding: 0px;
   }
   .footer p {
-      margin-top: 20px;
+    margin-top: 20px;
   }  
 }
-
-
+@media (max-width: 668px) {
+  ul.dropdown-menu-right {
+    right: 17%;
+  }
+}
+@media (max-width: 615px) {
+  ul.dropdown-menu-right {
+    right: 14%;
+  }
+}
+@media (max-width: 567px) {
+  ul.dropdown-menu-right {
+    right: 11%;
+  }
+}
+@media (max-width: 525px) {
+  ul.dropdown-menu-right {
+    right: 8%;
+  }
+}
 @media (max-width: 488px) {
   html,body {
     font-size: 14px;
+  }
+  ul.dropdown-menu-right {
+    right: 1%;
   }
   a.btn-news {
     font-size: 9px !important;
@@ -713,7 +746,7 @@ ul {
 }
 
 .navbar-header img {
-    margin-left: 80px;
+    margin-left: 0px;
 }
 
 span.icon-bar {
@@ -1255,23 +1288,17 @@ div.scrollmenu img:hover {
 }
 
 /* The expanding image gallery container */
-.dashboard-gallery img {
 
-}
 .gallery-container {
   margin: 10px auto;
   position: relative;
   display: none;
 }
-.dashboard-gallery img {
 
-}
 .gallery-container img {
   margin: 0 auto;
 }
-.dashboard-gallery img {
 
-}
 .gallery-container img {
   width: 545px;
   height: 480px;

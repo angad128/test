@@ -2,6 +2,7 @@ $('#closePopUpModal').click(function(){
   $('#popUpMain').css('display','none');
 });
 
+
 $(document).ready(function() {
   $("#word_count").on('keyup', function() {
     var words = this.value.match(/\S+/g).length;

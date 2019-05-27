@@ -8,19 +8,18 @@
 	</div>
 	@if(count($data)>0)
 	<div class="scrollmenu">
-     	 	@foreach($data as $result)
-	            <img  class="img img-responsive" src="/upload/gallery/{{$result->img}}" onclick="galleryFunction(this);">
-	        @endforeach
+     	@foreach($data as $result)
+	        <img  class="img img-responsive" src="/upload/gallery/{{$result->img}}" onclick="galleryFunction(this);">
+	    @endforeach
 	</div>
-
 	<div class="row"> 
-	        <div class="dashboard-gallery column-right pull-left">
-	        	 <div class="container gallery-container">
-		            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-		            <img id="expandedImg" class="img img-responsive">
-		            <div id="imgtext"></div>
-		        </div>
+        <div class="dashboard-gallery column-right pull-left">
+        	 <div class="container gallery-container">
+	            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+	            <img id="expandedImg" class="img img-responsive">
+	            <div id="imgtext"></div>
 	        </div>
+        </div>
     </div>
 	@else
       <div class="alert alert-danger alert-block">Sorry, No Image is published on gallery!</div>

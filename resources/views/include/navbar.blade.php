@@ -38,13 +38,18 @@
                 <ul class="nav navbar-nav navbar-left">
                     <li><a href="{!! url('/'); !!}"><i class="fas fa-home"></i><span>{{ __('key.home') }}</span></a></li>
                     <li><a href="{!! url('/about'); !!}"><span>{{ __('key.about') }}</span></a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>{{ __('key.committee') }}</span><span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                          <center><li><a href="{!! url('/comittee/partial'); !!}"><span>{{ __('key.pCommittee') }}</span></a></li></center>
+
+                    <li class="nav-item dropdown no-arrow">
+                      <a class="nav-link dropdown-toggle" href="#" id="committeedropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span>{{ __('key.committee') }}</span><span class="caret"></span>
+                      </a>
+                      <!-- Dropdown - User Information -->
+                      <ul class="dropdown-menu dropdown-menu-right shadow animated-grow-in" aria-labelledby="committeedropdown">
+                         <center><li><a href="{!! url('/comittee/partial'); !!}"><span>{{ __('key.pCommittee') }}</span></a></li></center>
                           <center><li><a href="{!! url('/comittee/under'); !!}"><span>{{ __('key.uCommittee') }}</span></a></li></center>
-                        </ul>
+                      </ul>
                     </li>
+
                     <li><a href="{!! url('/'); !!}#news"><span>{{ __('key.news') }}</span></a></li>
                     <li><a href="{!! url('/'); !!}#team"><span>{{ __('key.boardmember') }}</span></a></li>
                     <li><a href="{!! url('/gallery'); !!}"><span>{{ __('key.gallery') }}</span></a></li>

@@ -21,7 +21,6 @@ class NewsController extends Controller
             return view('backend/news/view')->with('data',$result);
         }
         else {
-            Session::put('error','To access Dashboard,Please Login First.');
             return back()->with('error','To access Dashboard,Please Login First.');
         }
     }

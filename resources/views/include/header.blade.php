@@ -9,5 +9,4 @@
     <link rel="stylesheet" type="text/css" href="{{URL::to('css/animate.css')}}">
 
     <link href="{{URL::to('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="{{URL::to('js/bootstrap.min.js')}}"></script>
+    
