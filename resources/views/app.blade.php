@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        @include('include/header')
+        @include('frontendInclude/header')
         <title>Pllannepal - @yield('title')</title>
         @yield('styles')
     </head>
 
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
         <div id="container">
-            @include('include/navbar')
+            @include('frontendInclude/navbar')
 
            @yield('contents')
            
-            @include('include/footer')
+            @include('frontendInclude/footer')
         </div>
-        @include('include/scripts')
+        @include('frontendInclude/scripts')
         @yield('scripts')
     </body>
 </html>

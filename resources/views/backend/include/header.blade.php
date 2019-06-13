@@ -12,6 +12,8 @@
   <link href="{{URL::to('css/sb-admin-2.min.css')}}" rel="stylesheet">
 
   <link href="{{URL::to('css/style.css')}}" rel="stylesheet">
-  
+
+<!--   <link rel="stylesheet" href="{{URL::to('css/bootstrap.min.css')}}">
+   -->
 
 

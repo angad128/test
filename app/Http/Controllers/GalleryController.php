@@ -45,22 +45,20 @@ class GalleryController extends Controller
             }
             $this->validate($request,[
                 'filename' => 'required',
-                'filedesc' => 'required',
             ]);
 
             $data = array();
             $data['filename'] = $request->filename;
-            $data['filedesc'] = $request->filedesc;
             $data['img'] = $imageName;
             $data['created_at'] = now();
 
 
             $result = DB::table('gallery')->insert($data);
             if ($result) {
-                return Redirect::to('/gallery/view')->with('success',"gallery Sucessfully Published.");
+                return Redirect::to('/gallery/view')->with('success',"Sucessfully Published on Gallery.");
             }
             else {
-                return Redirect::to('/gallery/view')->with('error','Fill all the forms correctly.');  
+                return Redirect::to('/gallery/view')->with('error','Please first fill all the forms correctly.');  
             }
         }
         else {
@@ -88,9 +86,6 @@ class GalleryController extends Controller
             if (empty($request->filename)) {
                 $filename= DB::table('gallery')->select('filename')->where('id',$request->id)->get(); 
             }
-            if (empty($request->filedesc)) {
-                $filedesc= DB::table('gallery')->select('filedesc')->where('id',$request->id)->get(); 
-            }
             if ($request->hasFile('img')) {
                 $ext = $request->img->getClientOriginalExtension();
                 $randFileName = rand(100,100000);
@@ -107,12 +102,10 @@ class GalleryController extends Controller
             }
             $this->validate($request,[
                 'filename' => 'required',
-                'filedesc' => 'required',
             ]);
 
             $data = array();
             $data['filename'] = $request->filename;
-            $data['filedesc'] = $request->filedesc;
             $data['img'] = $imageName;
             $data['updated_at'] = now();
 

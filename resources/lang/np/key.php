@@ -8,13 +8,38 @@ return [
     "uCommittee" => "मातहत  समिति",
 	"news" => "समाचार",
 	"boardmember" => "कार्यसमिति",
+    'yearly_session'  => 'महाधिवेशन',
 	"gallery"=> "गैलरी",
 	"contact"=> "सम्पर्क",
+
+        "first" => "पहिलो",
+        "second" => "दोस्रो",
+        "third" => "तेस्रो",
+        "fourth" => "चौथो",
+        "fifth" => "पाँचौं",
+
+        "chairman" => 'अध्यक्ष',
+        "sChairman" => 'वरिष्ठ उपाध्यक्ष',
+        'vChairman' => 'उपाध्यक्ष',
+        "gSecretary" => 'महासचिव',
+        "secretary" => 'सचिव',
+        "treasury" => "कोषाध्यक्ष",
+        "cMembers" => "केन्द्रिय सदस्य",
+        "member" => "सदस्य",
+        "state1" => "(प्रदेश १)",
+        "state2" => "(प्रदेश २)",
+        "state3" => "(प्रदेश ३)",
+        "state4" => "(गण्डकी प्रदेश)",
+        "state5" => "(प्रदेश ५)",
+        "state6" => "(कर्णाली प्रदेश)",
+        "state7" => "(सुदूरपश्चिम प्रदेश)",
+
 
 
     "langType"=>"Select Language",
     "langBtnEn"=>"English",
     "langBtnNp"=>"Nepali",
+
 
 
     "news-title"=> "समाचार",
@@ -75,6 +100,9 @@ return [
     'name'=>'नाम',
     'descriptions' => 'विवरण',
     'degination'=>'पद',
+
+
+    "owner" => "नेपाल लेखपढ कनून व्यावसायी एसोसिएसन ",
 
 ];
 

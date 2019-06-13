@@ -8,7 +8,7 @@ class LanguageSwitcher
 {
     public function handle($request, Closure $next)
     {
-        \App::setLocale(session('applocale') ?? 'en');
+        \App::setLocale(session('applocale') ?? 'np');
 
         return $next($request);
     }

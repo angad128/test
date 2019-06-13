@@ -6,10 +6,32 @@
         "pCommittee" => "PartialCommittee",
         "uCommittee" => "UnderCommittee",
 		"news" => "News",
+        'yearly_session'  => 'Session Meetings',
 		"boardmember" => "Boardmember",
 		"gallery"=> "Gallery",
 		"contact"=> "Contact",
 
+        "first" => "First",
+        "second" => "Second",
+        "third" => "Third",
+        "fourth" => "Fourth",
+        "fifth" => "Fifth",
+
+        "chairman" => 'Chairman',
+        "sChairman" => 'Sr. Vice Chairman',
+        'vChairman' => 'Vice Chairman',
+        "gSecretary" => 'Secretary General',
+        "secretary" => 'Secretary',
+        'treasury' => 'Treasury',
+        'cMembers' => 'Central Members',
+        "member" => 'Member',
+        "state1" => "(Provience 1)",
+        "state2" => "(Provience 2)",
+        "state3" => "(Provience 3)",
+        "state4" => "(Gandaki Provience)",
+        "state5" => "(Provience 5)",
+        "state6" => "(Karnali Provience)",
+        "state7" => "(Sudurpachim Provience)",
 
     	"langType"=>"भाषा छनुहोस",
     	"langBtnEn"=>"अंग्रेजी",
@@ -74,5 +96,8 @@
         'name'=>'Name',
         'descriptions' => 'Description',
         'degination'=>'Degination',
+
+
+    "owner" => "Professional Legal Lekhapadhi Association Of Nepal",
 	];
 ?>

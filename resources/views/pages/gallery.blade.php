@@ -4,22 +4,29 @@
 <div id="body" class="container-fluid">
   <div class="container">
     <div class="about-us">
-      <h2>Gallery</h2>
-     	 <div class="scrollmenu">
-     	 	@foreach($data as $result)
-	            <img  class="img img-responsive" src="/upload/gallery/{{$result->img}}" onclick="galleryFunction(this);">
-	        @endforeach
+      <h2>{{__('key.gallery')}}</h2>
+      <div id="gallery">
+		<!-- The four columns -->
+		@if(count($data)>0)
+		<div class="row">
+		  <div class="stripe">
+		  	@foreach($data as $result)
+		    <img src="/upload/gallery/{{$result->img}}" alt="{{$result->filename}}" onclick="galleryFunction(this);">
+		    @endforeach
+		  </div>
 		</div>
 
-	   	<div class="row"> 
-	        <div class="column-right pull-left">
-	        	 <div class="container gallery-container">
-		            <img id="expandedImg" class="img img-responsive">
-		            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-		            <div id="imgtext"></div>
-		        </div>
-	        </div>
-	    </div>
+		<div class="container">
+		  <span onclick="this.parentElement.style.display='none'" class="closebtn frontend">&times;</span>
+		  <div id="imgtext"></div>
+		  <img id="expandedImg" style="width:100%">
+		</div>
+
+		@else
+	      <div class="alert alert-danger alert-block">Sorry, No Image is published on gallery!</div>
+	    @endif
+
+	  </div>
     </div>
   </div>
 </div>

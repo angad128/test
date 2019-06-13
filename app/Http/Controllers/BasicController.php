@@ -15,11 +15,8 @@ class BasicController extends Controller
                  ->orderBy('created_at', 'desc')
                  ->limit(5)
                  ->get();
-        $legislations_data = DB::table('legislations')->paginate(5);
-        $members_data = DB::table('members')
-                 ->orderBy('id', 'asc')
-                 ->get();
-        return view('pages/index')->with(compact('news_data', 'legislations_data','notice_data','members_data'));
+
+        return view('pages/index')->with(compact('news_data','notice_data'));
     }
 
     public function pagenotfound(){
@@ -47,5 +44,23 @@ class BasicController extends Controller
                     ->get();
     	return view('pages/gallery')->with('data',$result);
     }
+
+
+    public function firstSession(){
+        return view('pages/yearly_session/first');
+    }
+    public function secondSession(){
+        return view('pages/yearly_session/second');
+    }
+    public function thirdSession(){
+        return view('pages/yearly_session/third');
+    }
+    public function fourthSession(){
+        return view('pages/yearly_session/fourth');
+    }
+    public function fifthSession(){
+        return view('pages/yearly_session/fifth');
+    }
+
 
 }

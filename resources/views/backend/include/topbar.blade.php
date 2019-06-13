@@ -8,20 +8,6 @@
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
-
-             <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-language text-blue top-bar-fontsize"></i>
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ __('key.langType')}}?</span>
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="languageDropdown">
-                <a class="dropdown-item" href="{{ route('set.language','en') }}" id="en">{{ __('key.langBtnEn')}}</a>
-                <a class="dropdown-item" href="{{ route('set.language','np') }}" id="np">{{ __('key.langBtnNp')}}</a>
-              </div>
-            </li>
-
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->

@@ -9,10 +9,6 @@
 	        <input class="form-control" type="text" name="filename" placeholder="Gallery name..">
 	    </div>
 	    <div class="form-group">
-	        <label for="filedesc">{{__('key.descriptions')}}</label>
-	        <input class="form-control" type="text" name="filedesc" placeholder="Gallery description...">
-	    </div>
-	    <div class="form-group">
 	        <label for="image">{{__('key.image')}}</label>
 	        <input class="form-control" type="file" id="image" name="img">
 	    </div>

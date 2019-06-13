@@ -2,15 +2,11 @@
 @section('title', 'Gallery Edit')
 @section('contents')
 	<h2>{{__('key.edit')}} {{__('key.gallery')}}</h2>
-   <form method="post" class="container" action="{{URL::to('/gallery/upload/'.$data->id)}}" enctype="multipart/form-data">
+   <form method="post" class="container" action="{{URL::to('/gallery/update/'.$data->id)}}" enctype="multipart/form-data">
     @csrf
 	    <div class="form-group">
 	        <label for="filename">{{__('key.name')}}</label>
 	        <input class="form-control" type="text" name="filename" value="{{$data->filename}}" placeholder="{{$data->filename}}">
-	    </div>
-	    <div class="form-group">
-	        <label for="filedesc">{{__('key.descriptions')}}</label>
-	        <input class="form-control" type="text" name="filedesc" value="{{$data->filedesc}}" placeholder="{{$data->filedesc}}">
 	    </div>
 	    <div class="form-group">
 	        <label for="image">{{__('key.image')}}</label>
